@@ -14,7 +14,8 @@ export const style = StyleSheet.create({
         padding: 10,
         borderColor: theme.colors.slate_400,
         backgroundColor: theme.colors.white,
-        fontFamily: theme.fonts.family.regular
+        fontFamily: theme.fonts.family.regular,
+        color: theme.colors.black
     },
     input_selected: {
         borderColor: theme.colors.primary,
@@ -24,6 +25,7 @@ export const style = StyleSheet.create({
         shadowOpacity: 0.2,
         shadowRadius: 4,
         elevation: 5,
+        color: theme.colors.black
     },
     text_area: {
         width: "100%",

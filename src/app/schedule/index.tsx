@@ -12,6 +12,7 @@ import { SaleProps } from "@/types/sales";
 import { CardSchedule } from "@/components/card_schedule";
 import { theme } from "@/theme";
 import { useMemo } from "react";
+import { Menu } from "@/components/menu";
 
 LocaleConfig.locales["pt-br"] = ptBR;
 LocaleConfig.defaultLocale = "pt-br";
@@ -101,7 +102,7 @@ export default function Schedule(){
                       todayTextColor: "#3B82F6",
                       arrowColor: "#3B82F6",
                     }}
-                    
+                    enableSwipeMonths
                     
                 />
 
@@ -122,12 +123,13 @@ export default function Schedule(){
                     keyExtractor={item => String(item.id)}
                     renderItem={({item}) => <CardSchedule sale={item} />}
                     style={style.pendingContainer}
-                    contentContainerStyle={{ paddingBottom: 10 }}
+                    contentContainerStyle={{ paddingBottom: 10 ,}}
                     showsVerticalScrollIndicator={false}
                     />
                 )}
 
             </Body>
+            {/* <Menu /> */}
         </Container>
     )
 }

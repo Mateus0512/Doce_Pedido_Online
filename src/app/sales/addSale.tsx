@@ -232,6 +232,7 @@ export default function AddSale(){
                         onFocus={() => setInputSelected(state => ({...state,partyThemeSelected:true}))}
                         onBlur={() => setInputSelected(state => ({...state,partyThemeSelected:false}))}
                         placeholder="Tema da festa"
+                        error={errors.party_theme?.message}
                     />
 
                     <Input 
@@ -242,6 +243,7 @@ export default function AddSale(){
                         placeholder="Digite o nome do aniversariante"
                         onFocus={() => setInputSelected(state => ({...state,birthdayPersonNameSelected:true}))}
                         onBlur={() => setInputSelected(state => ({...state,birthdayPersonNameSelected:false}))}
+                        error={errors.birthday_person_name?.message}
                     />
 
                     <Input 
@@ -253,6 +255,7 @@ export default function AddSale(){
                         onFocus={() => setInputSelected(state => ({...state,ageToCompleteSelected:true}))}
                         onBlur={() => setInputSelected(state => ({...state,ageToCompleteSelected:false}))}
                         keyboardType="numeric"
+                        error={errors.age_to_complete?.message}
                     />
                     </Form>
 
@@ -325,6 +328,7 @@ export default function AddSale(){
                             placeholder="Digite as observações"
                             onFocus={() => setInputSelected(state => ({...state,observationsSelected:true}))}
                             onBlur={() => setInputSelected(state => ({...state,observationsSelected:false}))}
+                            error={errors.observations?.message}
                         />
  
                     </Form>

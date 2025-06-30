@@ -131,5 +131,12 @@ export const commonStyles = StyleSheet.create({
         borderColor: theme.colors.slate_400,
         backgroundColor: theme.colors.white,
         fontFamily: theme.fonts.family.regular
+    },
+    noSaleText:{
+        fontSize: 18,
+        color: theme.colors.slate_900,
+        marginBottom: 4,
+        fontFamily: theme.fonts.family.medium,
+        textAlign: "center"
     }
 });

@@ -7,7 +7,7 @@ import { useSales } from "@/lib/useSales";
 import { SaleProps } from "@/types/sales";
 import { router } from "expo-router";
 import { useEffect, useState } from "react";
-import {Alert, FlatList, Pressable, TouchableOpacity} from "react-native";
+import {Alert, FlatList, Text, TouchableOpacity} from "react-native";
 import { Menu } from "@/components/menu";
 import { useClients } from "@/lib/useClients";
 import { Dropdown } from "react-native-element-dropdown";
@@ -23,6 +23,7 @@ export default function Sales(){
     const [sales, setSales] = useState<SaleProps[]>([]);
     const [searchedSales,setSearchedSales] = useState<SaleProps[]>([]);
     const [clients,setClients] = useState<{id:string,name:string}[]>([]);
+    const [dropdownValue,setDropdownValue] = useState<{id:string,name:string}>({id:"",name:""});
 
 
     async function loadSales() {
@@ -68,7 +69,7 @@ export default function Sales(){
         }
     }
 
-    const filteredSales = searchedSales.length>0 ? searchedSales : sales
+    const filteredSales = dropdownValue.id!=="" ? searchedSales : sales
 
     useEffect(() => {
         loadClients();
@@ -83,15 +84,16 @@ export default function Sales(){
                     data={clients}
                     valueField={"id"}
                     labelField={"name"}
-                    onChange={(item) => loadSearchedClientSales(item.id)}
+                    onChange={(item) => {loadSearchedClientSales(item.id);setDropdownValue({id:item.id,name:item.name})}}
                     style={commonStyles.input}
                     placeholder="Selecione um cliente"
                     search
                     searchPlaceholder="Pesquise um cliente"
+                    value={dropdownValue}
                     renderRightIcon={() => 
-                        searchedSales.length > 0 
+                        dropdownValue.id!=="" 
                         ? (
-                            <TouchableOpacity onPress={() => setSearchedSales([])}>
+                            <TouchableOpacity onPress={() => {setSearchedSales([]); setDropdownValue({id:"",name:""})}}>
                                 <MaterialCommunityIcons name="close" size={18} />
                             </TouchableOpacity>
                         )
@@ -101,18 +103,23 @@ export default function Sales(){
                 />
 
                 <TotalItems filteredDataLength={filteredSales.length} screen="vendas"  />
-
-                <FlatList 
-                    data={filteredSales}
-                    keyExtractor={(item) => String(item.id)}
-                    renderItem={({item}) => 
-                    <SaleCard  
-                        sale={item}
-
-                    />}
-                    showsVerticalScrollIndicator={false}
-                    contentContainerStyle={{paddingBottom:60}}
-                />
+                
+                {filteredSales.length==0 
+                ?(
+                    <Text style={commonStyles.noSaleText}>Não existe vendas para esse cliente. </Text>
+                ):(
+                    <FlatList 
+                        data={filteredSales}
+                        keyExtractor={(item) => String(item.id)}
+                        renderItem={({item}) => 
+                        <SaleCard  
+                            sale={item}
+    
+                        />}
+                        showsVerticalScrollIndicator={false}
+                        contentContainerStyle={{paddingBottom:60}}
+                    />
+                )}
             </Body>
             <Menu />
         </Container>

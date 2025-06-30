@@ -16,7 +16,7 @@ import { Container } from '@/components/container';
 
 export default function Update() {
     const {id, name, phone, house_number, street, neighborhood,city,notes} = useLocalSearchParams<{id:string, name:string, phone:string, house_number:string, street:string, neighborhood:string,city:string,notes:string}>();
-    const {control, handleSubmit,getValues, formState:{errors, isSubmitting}} = useForm({resolver:zodResolver(clientSchema),defaultValues: {
+    const {control, handleSubmit,getValues, formState:{errors}} = useForm({resolver:zodResolver(clientSchema),defaultValues: {
         id: id,
         name: name,
         phone: phone,

@@ -79,6 +79,7 @@ export default function Update(){
                 onBlur={() => setInputSelected(state => ({...state,inputNameSelected:false}))}
                 text="Nome"
                 placeholder="Digite o nome do produto"
+                error={errors.name?.message}
             />
 
             <Input 
@@ -90,6 +91,7 @@ export default function Update(){
                 text="Valor"
                 placeholder="Digite o valor do produto"
                 keyboardType="numeric"
+                error={errors.price?.message}
             />
 
             <Button title={loading ? "Atualizando" : "Atualizar"} onPress={handleSubmit(HandleUpdateProduct)}/> 

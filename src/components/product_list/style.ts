@@ -42,7 +42,8 @@ export const style = StyleSheet.create({
         backgroundColor: theme.colors.white,
         fontFamily: theme.fonts.family.regular,
         position:"absolute",
-        bottom:0
+        bottom:0,
+        color: theme.colors.black
     },
     input_selected: {
         borderColor: theme.colors.primary,
@@ -52,6 +53,7 @@ export const style = StyleSheet.create({
         shadowOpacity: 0.2,
         shadowRadius: 4,
         elevation: 5,
+        color: theme.colors.black
     },
     containerInput:{
         height:60,

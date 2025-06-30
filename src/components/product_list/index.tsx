@@ -36,9 +36,11 @@ export function ProductList({products,selectedProducts,setSelectedProducts}:Mult
                 </View> */}
             <ScrollView style={style.container} stickyHeaderIndices={[0]}>
                  <View style={style.containerInput}>
-                    <TextInput style={[style.input]} placeholder="Pesquise um produto" 
+                    <TextInput style={[style.input,inputSelected && style.input_selected]} placeholder="Pesquise um produto" 
                     onChangeText={setSearch} 
                     placeholderTextColor="#AAA"
+                    onFocus={()=> setInputSelected(true)}
+                    onBlur={()=> setInputSelected(false)}
                     />
                 </View>
                 {filteredProducts.map(product => (
