@@ -93,7 +93,7 @@ export function ClientCard({ id, name, phone, street, house_number, neighborhood
             >
                 <View style={style.divisor} />
                 <View style={style.options}>
-                    <TouchableOpacity activeOpacity={0.7} style={style.button} onPress={talkInWhatsApp}>
+                    <TouchableOpacity activeOpacity={0.7} style={style.button} onPress={talkInWhatsApp} disabled={!optionsOpen}>
                         <Text style={style.buttonText}>Enviar mensagem</Text>
                         <MaterialCommunityIcons name="whatsapp" size={16} color={theme.colors.white} />
                     </TouchableOpacity>
@@ -101,11 +101,12 @@ export function ClientCard({ id, name, phone, street, house_number, neighborhood
                         activeOpacity={0.7}
                         style={style.button}
                         onPress={() => router.push({ pathname: "/clients/update", params: { id, name, phone, house_number, street, neighborhood, city, notes } })}
+                        disabled={!optionsOpen}
                     >
                         <Text style={style.buttonText}>Editar cliente</Text>
                         <MaterialCommunityIcons name="note-edit-outline" size={16} color={theme.colors.white} />
                     </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={0.7} style={[style.button, { backgroundColor: theme.colors.red_500 }]} onPress={() => ConfirmDeletion(id|| "")}>
+                    <TouchableOpacity activeOpacity={0.7} style={[style.button, { backgroundColor: theme.colors.red_500 }]} onPress={() => ConfirmDeletion(id|| "")} disabled={!optionsOpen}>
                         <Text style={style.buttonText}>Excluir cliente</Text>
                         <MaterialCommunityIcons name="trash-can-outline" size={16} color={theme.colors.white} />
                     </TouchableOpacity>
@@ -118,7 +119,7 @@ export function ClientCard({ id, name, phone, street, house_number, neighborhood
                     <View>
                         <View style={style.divisor} />
                         <View style={style.options}>
-                            <TouchableOpacity activeOpacity={0.7} style={style.button} onPress={talkInWhatsApp}>
+                            <TouchableOpacity activeOpacity={0.7} style={style.button} onPress={talkInWhatsApp} disabled={!optionsOpen}>
                                 <Text style={style.buttonText}>Enviar mensagem</Text>
                                 <MaterialCommunityIcons name="whatsapp" size={16} color={theme.colors.white} />
                             </TouchableOpacity>
@@ -126,11 +127,12 @@ export function ClientCard({ id, name, phone, street, house_number, neighborhood
                                 activeOpacity={0.7}
                                 style={style.button}
                                 onPress={() => router.push({ pathname: "/clients/update", params: { id, name, phone, house_number, street, neighborhood, city, notes } })}
+                                disabled={!optionsOpen}
                             >
                                 <Text style={style.buttonText}>Editar cliente</Text>
                                 <MaterialCommunityIcons name="note-edit-outline" size={16} color={theme.colors.white} />
                             </TouchableOpacity>
-                            <TouchableOpacity activeOpacity={0.7} style={[style.button, { backgroundColor: theme.colors.red_500 }]} onPress={() => ConfirmDeletion(id || "")}>
+                            <TouchableOpacity activeOpacity={0.7} style={[style.button, { backgroundColor: theme.colors.red_500 }]} onPress={() => ConfirmDeletion(id || "")} disabled={!optionsOpen}>
                                 <Text style={style.buttonText}>Excluir cliente</Text>
                                 <MaterialCommunityIcons name="trash-can-outline" size={16} color={theme.colors.white} />
                             </TouchableOpacity>

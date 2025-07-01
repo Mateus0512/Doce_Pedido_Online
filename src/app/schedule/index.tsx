@@ -123,7 +123,7 @@ export default function Schedule(){
                     keyExtractor={item => String(item.id)}
                     renderItem={({item}) => <CardSchedule sale={item} />}
                     style={style.pendingContainer}
-                    contentContainerStyle={{ paddingBottom: 10 ,}}
+                    contentContainerStyle={{paddingBottom:10}}
                     showsVerticalScrollIndicator={false}
                     />
                 )}

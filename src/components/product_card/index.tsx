@@ -78,11 +78,12 @@ export function ProductCard({ id, name, price, loadProducts }: ProductCardProps)
                         activeOpacity={0.7}
                         style={style.button}
                         onPress={() => router.push({ pathname: "/products/update", params: { id, name, price } })}
+                        disabled={!optionsOpen}
                     >
                         <Text style={style.buttonText}>Editar produto</Text>
                         <MaterialCommunityIcons name="note-edit-outline" size={16} color={theme.colors.white} />
                     </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={0.7} style={[style.button, { backgroundColor: theme.colors.red_500 }]} onPress={() => ConfirmDeletion(id|| "")}>
+                    <TouchableOpacity activeOpacity={0.7} style={[style.button, { backgroundColor: theme.colors.red_500 }]} onPress={() => ConfirmDeletion(id|| "")} disabled={!optionsOpen}>
                         <Text style={style.buttonText}>Excluir produto</Text>
                         <MaterialCommunityIcons name="trash-can-outline" size={16} color={theme.colors.white} />
                     </TouchableOpacity>
@@ -99,11 +100,12 @@ export function ProductCard({ id, name, price, loadProducts }: ProductCardProps)
                                 activeOpacity={0.7}
                                 style={style.button}
                                 onPress={() => router.push({ pathname: "/products/update", params: { id, name, price } })}
+                                disabled={!optionsOpen}
                             >
                                 <Text style={style.buttonText}>Editar produto</Text>
                                 <MaterialCommunityIcons name="note-edit-outline" size={16} color={theme.colors.white} />
                             </TouchableOpacity>
-                            <TouchableOpacity activeOpacity={0.7} style={[style.button, { backgroundColor: theme.colors.red_500 }]} onPress={() => ConfirmDeletion(id || "")}>
+                            <TouchableOpacity activeOpacity={0.7} style={[style.button, { backgroundColor: theme.colors.red_500 }]} onPress={() => ConfirmDeletion(id || "")} disabled={!optionsOpen}>
                                 <Text style={style.buttonText}>Excluir produto</Text>
                                 <MaterialCommunityIcons name="trash-can-outline" size={16} color={theme.colors.white} />
                             </TouchableOpacity>
