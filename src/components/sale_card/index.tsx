@@ -32,7 +32,7 @@ export function SaleCard({sale}: {sale: SaleProps}) {
     }
 
     return (
-        <TouchableOpacity style={style.card} activeOpacity={0.6} 
+        <TouchableOpacity style={[style.card,sale.status_delivery ? style.completedCard : style.pendingCard ]} activeOpacity={0.6} 
         onLongPress={() => router.push({pathname: "/sales/sale", params: {id:sale.id}})}>
             <View style={style.cardHeader}>
                 <View style={{flexShrink:1}}>

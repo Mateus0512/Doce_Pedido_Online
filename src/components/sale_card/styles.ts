@@ -83,7 +83,15 @@ export const style = StyleSheet.create({
         color: theme.colors.slate_800,
         fontFamily: theme.fonts.family.regular,
         marginVertical: 2,
-    }
+    },
+    pendingCard: {
+        borderLeftWidth: 5,
+        borderLeftColor: "#D97706", // Laranja para destacar vendas pendentes
+  },
+  completedCard:{
+    borderLeftWidth: 5,
+    borderLeftColor: "#15803d",
+  }
 });
 
 

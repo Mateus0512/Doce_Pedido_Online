@@ -19,12 +19,19 @@ export function CardSchedule({ sale }: {sale: SaleProps}) {
         <Text style={style.clientName}>{sale.clients.name}</Text>
 
         {/* Nome do aniversariante e idade */}
-        <Text style={style.birthday}>
-          {sale.birthday_person_name} ({sale.age_to_complete} anos)
-        </Text>
+        {sale.birthday_person_name && sale.age_to_complete && (
+          <Text style={style.birthday}>
+            {sale.birthday_person_name} ({sale.age_to_complete} anos)
+          </Text>
+        )}
 
         {/* Tema da festa */}
-        <Text style={style.partyTheme}>{sale.party_theme}</Text>
+        {sale.party_theme ? (
+          <Text style={style.partyTheme}>{sale.party_theme}</Text>
+
+        ):
+        <Text style={style.partyTheme}>Venda simples</Text>
+        }
 
         {/* Data da entrega */}
         <View style={style.deliveryInfo}>
