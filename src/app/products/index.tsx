@@ -63,7 +63,7 @@ export default function Products(){
                     keyExtractor={item => String(item.id)}
                     renderItem={({item})=> <ProductCard id={item.id} name={item.name} price={item.price} loadProducts={loadProducts}/>}
                     showsVerticalScrollIndicator={false}
-                    contentContainerStyle={{paddingBottom:60}}
+                    
                 />
             </Body>
             <Menu />

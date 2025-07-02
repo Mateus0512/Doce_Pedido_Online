@@ -1,5 +1,8 @@
 import { theme } from "@/theme";
 import { StyleSheet } from "react-native";
+import { Dimensions } from 'react-native';
+const { width, height } = Dimensions.get('window');
+
 
 export const style = StyleSheet.create({
 container: {
@@ -96,16 +99,16 @@ containerServicos: {
 
 cardServicos: {
     flexDirection: "row",
-    justifyContent: "space-between", // Distribui os itens sem espaçamentos irregulares
-    alignItems: "center",
-    flexWrap: "wrap", // Evita quebra desnecessária
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    alignItems: "stretch", // ✅ Isso força os itens da mesma linha a terem a mesma altura
 },
 
 itemServico: {
     backgroundColor: theme.colors.white,
     flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
+    flex:1,
+    justifyContent: "space-between",
     gap: 4, // Reduzi um pouco o espaçamento para ficar mais compacto
     borderRadius: 12,
     padding: 12, // Menos padding para evitar ocupar muito espaço
@@ -115,9 +118,10 @@ itemServico: {
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 3, // Mantendo a sombra
-    width: "48%", // Mantendo, mas garantindo alinhamento no cardServicos
+    marginHorizontal:5,
     borderWidth: 1, 
     borderColor: theme.colors.slate_300, // Adiciona uma borda sutil para destacar melhor
+    
 },
 cardResumo: {
     backgroundColor: theme.colors.white,

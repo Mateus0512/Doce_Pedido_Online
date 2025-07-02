@@ -62,7 +62,7 @@ export default function Clients(){
                     keyExtractor={item => String(item.id)}
                     renderItem={({item}) => <ClientCard id={item.id} name={item.name} phone={item.phone} city={item.city} house_number={item.house_number} neighborhood={item.neighborhood} notes={item.notes} street={item.street} loadClients={loadClients}/>}
                     showsVerticalScrollIndicator={false}
-                    contentContainerStyle={{paddingBottom:60}}
+                    
                 />
             </Body>
             <Menu />

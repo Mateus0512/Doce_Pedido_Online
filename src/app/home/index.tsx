@@ -1,4 +1,4 @@
-import { View,Text, Pressable, Alert, TouchableOpacity, Modal } from "react-native";
+import { View,Text, Alert, TouchableOpacity, Modal } from "react-native";
 import {useAuth} from "@/contexts/authContext";
 import { style } from "./styles";
 import { theme } from "@/theme";
@@ -198,39 +198,39 @@ export default function Home(){
                     <Text style={style.tituloCategoria}>Serviços</Text>
 
                     <View style={style.cardServicos}>
-                        <Pressable style={style.itemServico} onPress={()=> router.navigate("/clients")}>
+                        <TouchableOpacity style={style.itemServico} activeOpacity={.5} onPress={()=> router.navigate("/clients")}>
                             <MaterialCommunityIcons name="account-group" size={24} color={theme.colors.slate_900} />
                             <Text style={style.label}>Listar clientes</Text>
-                        </Pressable>
+                        </TouchableOpacity>
 
-                        <Pressable style={style.itemServico} onPress={() =>router.navigate("/clients/add")}>
+                        <TouchableOpacity style={style.itemServico} activeOpacity={.5} onPress={() =>router.navigate("/clients/add")}>
                             <MaterialCommunityIcons name="account-plus" size={24} color={theme.colors.slate_900} />
                             <Text style={style.label}>Cadastrar cliente</Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
 
                     <View style={style.cardServicos}>
-                        <Pressable style={style.itemServico} onPress={()=> router.navigate("/products")}>
+                        <TouchableOpacity style={style.itemServico} activeOpacity={.5} onPress={()=> router.navigate("/products")}>
                             <MaterialCommunityIcons name="cake" size={24} color={theme.colors.slate_900} />
                             <Text style={style.label}>Listar produtos</Text>
-                        </Pressable>
+                        </TouchableOpacity>
 
-                        <Pressable style={style.itemServico} onPress={() => router.navigate("/products/add")}>
+                        <TouchableOpacity style={style.itemServico} activeOpacity={.5} onPress={() => router.navigate("/products/add")}>
                             <MaterialCommunityIcons name="plus-box" size={24} color={theme.colors.slate_900} />
                             <Text style={style.label}>Cadastrar produto</Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
 
                     <View style={style.cardServicos}>
-                        <Pressable style={style.itemServico} onPress={()=> router.navigate("/sales")}>
+                        <TouchableOpacity style={style.itemServico} activeOpacity={.5} onPress={()=> router.navigate("/sales")}>
                             <MaterialCommunityIcons name="clipboard-edit" size={24} color={theme.colors.slate_900} />
                             <Text style={style.label}>Listar vendas</Text>
-                        </Pressable>
+                        </TouchableOpacity>
 
-                        <Pressable style={style.itemServico} onPress={()=> router.navigate("/sales/addSale")}>
+                        <TouchableOpacity style={style.itemServico} activeOpacity={.5} onPress={()=> router.navigate("/sales/addSale")}>
                             <MaterialCommunityIcons name="cart-plus" size={24} color={theme.colors.slate_900} />
                             <Text style={style.label}>Cadastrar venda</Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
 
 

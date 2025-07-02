@@ -117,7 +117,7 @@ export default function Sales(){
     
                         />}
                         showsVerticalScrollIndicator={false}
-                        contentContainerStyle={{paddingBottom:60}}
+                        
                     />
                 )}
             </Body>
